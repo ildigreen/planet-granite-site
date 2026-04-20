@@ -1,0 +1,66 @@
+#starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse at bottom, #02030a, #000);
+  pointer-events: none;
+}
+
+.hero,
+.timeline,
+.footer,
+#tooltip {
+  position: relative;
+  z-index: 1;
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+svg {
+  max-width: 750px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.spacer {
+  height: 100px;
+}
+
+#rocket {
+  pointer-events: none;
+  will-change: transform;
+}
+
+.planet {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.planet circle {
+  transition: transform 0.25s ease, filter 0.25s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.planet:hover circle {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+}
+
+#tooltip {
+  position: fixed;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-family: Orbitron;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}

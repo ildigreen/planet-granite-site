@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Planet Granite - Home</title>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="root-styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<canvas id="starfield"></canvas>
+
+<header class="hero" id="toTop">
+  <div class="hero-content">
+    <h1>Planet Granite</h1>
+    <p>Introduction – explain what the project is and how it was developed briefly.</p>
+  </div>
+
+  <div class="scroll-indicator">↓</div>
+</header>
+
+<div class="spacer"></div>
+
+<div id="tooltip"></div>
+
+<section class="timeline">
+
+<svg id="svgPath" viewBox="0 0 500 1500">
+
+<g class="planet" data-info="Home">
+  <a href="index.html"><circle cx="250" cy="90" r="60" fill="#f1c40f"/></a>
+</g>
+
+<g class="planet" data-info="Introduction">
+  <a href="introduction.html"><circle cx="160" cy="320" r="40" fill="#e67e22"/></a>
+</g>
+
+<g class="planet" data-info="Game Concept">
+  <a href="game-concept.html"><circle cx="320" cy="500" r="42" fill="#3498db"/></a>
+</g>
+
+<g class="planet" data-info="Development">
+  <a href="development.html"><circle cx="180" cy="700" r="43" fill="#2ecc71"/></a>
+</g>
+
+<g class="planet" data-info="Assets">
+  <a href="Assets.html"><circle cx="340" cy="900" r="40" fill="#9b59b6"/></a>
+</g>
+
+<g class="planet" data-info="Testing">
+  <a href="testing-feedback.html"><circle cx="150" cy="1100" r="44" fill="#1abc9c"/></a>
+</g>
+
+<g class="planet" data-info="Resources">
+  <a href="resources-references.html"><circle cx="260" cy="1300" r="48" fill="#e74c3c"/></a>
+</g>
+
+<path id="path"
+d="M260,80
+C120,200 380,320 160,320
+S380,500 320,500
+S120,700 180,700
+S380,900 340,900
+S120,1100 150,1100
+S380,1300 260,1300"
+fill="none"
+stroke="white"
+stroke-width="4"/>
+
+<g id="rocket">
+  <image
+    href="https://cdn-icons-png.flaticon.com/512/3212/3212608.png"
+    width="40"
+    height="40"
+    x="-20"
+    y="-20"
+  />
+</g>
+
+</svg>
+
+</section>
+
+<div class="spacer"></div>
+
+<footer class="footer">
+  <div class="footer-content">
+
+    <a class="toTop" href="#toTop">↑ Back to Top</a>
+
+    <h2>Planet Granite</h2>
+
+    <p>An immersive space-themed project.</p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="introduction.html">Introduction</a>
+      <a href="game-concept.html">Game Concept</a>
+      <a href="development.html">Development</a>
+      <a href="Assets.html">Assets</a>
+      <a href="testing-feedback.html">Testing & Feedback</a>
+      <a href="resources-references.html">Resources & References</a>
+      <a href="reflections.html">Reflections</a>
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
