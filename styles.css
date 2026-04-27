@@ -1,0 +1,229 @@
+body{
+  margin:0;
+  overflow-x:hidden;
+  font-family:Orbitron, sans-serif;
+  color:white;
+  background:transparent;
+}
+
+/* =========================
+   STARFIELD CANVAS (REAL BACKGROUND)
+========================= */
+
+#starfield{
+  position:fixed;
+  inset:0;
+  width:100vw;
+  height:100vh;
+
+  z-index:-1;
+  pointer-events:none;
+
+  /* IMPORTANT:
+     keep this subtle only — JS provides the galaxy feel */
+  background: radial-gradient(
+    ellipse at center,
+    #081b3a 0%,
+    #050816 40%,
+    #02030a 70%,
+    #000000 100%
+  );
+}
+
+/* =========================
+   GLOBAL LAYER STACK
+========================= */
+
+.hero,
+.timeline,
+.footer,
+#tooltip{
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   LANDING PAGE ONLY
+========================= */
+
+body:not(.page-content-layout) .hero{
+  position:absolute;
+  top:8vh;
+  left:6vw;
+  text-align:left;
+}
+
+.timeline{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+  padding:0 20px;
+}
+
+svg{
+  max-width:750px;
+  width:100%;
+  height:auto;
+  display:block;
+  transform: translate(110px, -60px);
+}
+
+/* =========================
+   PLANETS (LANDING PAGE)
+========================= */
+
+.planet{
+  cursor:pointer;
+  transition:0.25s ease;
+  transform-box:fill-box;
+  transform-origin:center;
+}
+
+.planet:hover{
+  transform:scale(1.08);
+  filter:
+    drop-shadow(0 0 6px rgba(255,255,255,0.6))
+    drop-shadow(0 0 12px rgba(255,255,255,0.35));
+}
+
+
+
+/* =========================
+   ROCKET
+========================= */
+
+#rocket{
+  pointer-events:none;
+  will-change:transform;
+}
+
+/* =========================
+   TOOLTIP
+========================= */
+
+#tooltip{
+  position:fixed;
+  padding:10px 16px;
+  border-radius:16px;
+  background:rgba(0,0,0,0.6);
+  font-size:18px;
+  opacity:0;
+  pointer-events:none;
+  z-index:9999;
+}
+
+/* =========================
+   PAGE SYSTEM (ALL CONTENT PAGES)
+========================= */
+
+.page-content-layout{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* HEADER (ALL PAGES UNIFIED) */
+
+.page-content-layout .page-header{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  flex-direction:column;
+  gap:30px;
+
+  text-align:center;
+
+  margin-top:60px;
+  margin-bottom:40px;
+}
+
+.page-content-layout .page-header h1{
+  font-size:clamp(2.2rem, 4.5vw, 3.5rem);
+  margin:0;
+  letter-spacing:1.5px;
+}
+
+/* PLANET ON PAGE HEADERS */
+
+.page-content-layout .page-planet{
+  width:130px;
+  height:130px;
+  object-fit:contain;
+
+  filter:drop-shadow(0 0 24px rgba(255,255,255,0.45));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.page-content-layout .page-planet:hover{
+  transform:scale(1.08);
+  filter:drop-shadow(0 0 32px rgba(120,180,255,0.55));
+}
+
+/* MAIN CONTENT */
+
+.page-content-layout main.page-content{
+  flex:1;
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+
+/* TEXT BLOCKS */
+
+.page-content-layout .text-block{
+  background:rgba(0,0,0,0.55);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:16px;
+
+  padding:24px 28px;
+  margin:30px 0;
+
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* FOOTER */
+
+.page-content-layout .footer{
+  margin-top:auto;
+  padding:40px 20px;
+}
+
+/* =========================
+   SPACING
+========================= */
+
+.spacer{
+  height:clamp(60px,10vw,120px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  svg{
+    max-width:95%;
+    transform: translate(50px, -30px);
+  }
+
+  #tooltip{
+    display:none;
+  }
+
+  .page-content-layout .page-planet{
+    width:105px;
+    height:105px;
+  }
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.toTop{
+  cursor:pointer;
+}
